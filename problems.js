@@ -1,8 +1,8 @@
-const greatestCombo = (array) => { //       O(n)
+const greatestCombo = (array) => { //  O(n^2)
     let stringifiedArray = array.join("O").split("O") // stringify each element of the array
     let combo = "" // accumulator for greatest combination
 
-    while (stringifiedArray.length !== 0) {                                                 // set loop to continously run through the array until it is empty 
+    while (stringifiedArray.length !== 0) {                //O(n)                                   // set loop to continously run through the array until it is empty 
         const maxNum = stringifiedArray.reduce((a, b) => {                                 // use reduce to get O(n) for finding number
 
             if (parseInt(b.split("")[0]) > parseInt(a.split("")[0])) {
