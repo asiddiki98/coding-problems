@@ -24,13 +24,22 @@
 
 function josephusSurvivor(n, k) {
     let array = []
-    for (i = 0; i < n; i ++){
-        for (let i = 0; i < k; i++) {
-            
-      }
+
+    for (let i = 0; i <= n; i ++){
+        array.push(i)
 
     }
-  return n
+    let i = 0
+  while (array.length > 1){
+        debugger
+   if ( i % 3 == 0){
+       array.splice(array.length % i, 1)
+   }
+        i ++
+    }
+
+
+//   return array
 }
 
 console.log(josephusSurvivor(7, 3)) // 4
