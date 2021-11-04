@@ -11,4 +11,10 @@ NBAPlayer.prototype.payment = function(){
 }
 
 const curry = new NBAPlayer("Stephen Curry", "Nicks", "pointgaurd")
-console.log(curry.payment())
+// console.log(curry.payment())
+
+// let callback = function() {
+//     console.log("you're in")
+// }
+
+setTimeout(() => console.log("you're in"), 5000)
