@@ -56,31 +56,52 @@ const isPrime = (arg1) => {
 // console.log(isPrime(3548563))
 
 
-Array.prototype.uniq = function(){
-    const uniq = []
-    for (let num of this){
-        if (uniq.includes(num)) continue ;
-        uniq.push(num)
-    }
-    return uniq
-}
+// Array.prototype.uniq = function(){
+//     const uniq = []
+//     for (let num of this){
+//         if (uniq.includes(num)) continue ;
+//         uniq.push(num)
+//     }
+//     return uniq
+// }
 
 // console.log([1, 2, 2, 3, 3, 3].uniq())
 
-Array.prototype.twoSum = function() {
-    let pair = [];
-    debugger
-    loop1: for (let num in this){
-        for (let n in this){
-            debugger
-            if (num !== n && (this[num] + this[n] === 0)) {
-                // pair.push(num, n)
-                return [num, n]
-                // break loop1
-            }
-        }
-    }
+// Array.prototype.twoSum = function() {
+//     let pair = [];
+//     // debugger
+//     loop1: for (let num in this){
+//         for (let n in this){
+//             // debugger
+//             if (num !== n && (this[num] + this[n] === 0)) {
+//                 // pair.push(num, n)
+//                 return [num, n]
+//                 // break loop1
+//             }
+//         }
+//     }
 
+// }
+
+// console.log([5,1,2,-2, -5].twoSum())
+
+Array.prototype.transpose = function() {
+    const transposed = [];
+    
+    for (let row = 0; row < this.length; row ++){
+        let curr = []
+        for ( let col = 0; col < this[row].length; col++){
+            curr.push(this[col][row])
+        }
+        transposed.push(curr)
+    }
+    return transposed
 }
 
-console.log([5,1,2,-2, -5].twoSum())
+const x = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+];
+
+console.log(x.transpose())
