@@ -31,7 +31,7 @@ function josephusSurvivor(n, k) {
     }
     let i = 0
   while (array.length > 1){
-        debugger
+     
    if ( i % 3 == 0){
        array.splice(array.length % i, 1)
    }

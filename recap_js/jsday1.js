@@ -54,3 +54,33 @@ const isPrime = (arg1) => {
 // console.log(isPrime(10))
 // console.log(isPrime(15485863))
 // console.log(isPrime(3548563))
+
+
+Array.prototype.uniq = function(){
+    const uniq = []
+    for (let num of this){
+        if (uniq.includes(num)) continue ;
+        uniq.push(num)
+    }
+    return uniq
+}
+
+// console.log([1, 2, 2, 3, 3, 3].uniq())
+
+Array.prototype.twoSum = function() {
+    let pair = [];
+    debugger
+    loop1: for (let num in this){
+        for (let n in this){
+            debugger
+            if (num !== n && (this[num] + this[n] === 0)) {
+                // pair.push(num, n)
+                return [num, n]
+                // break loop1
+            }
+        }
+    }
+
+}
+
+console.log([5,1,2,-2, -5].twoSum())
