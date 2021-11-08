@@ -1,3 +1,28 @@
+const arr = [1, 2, 3, 4, 5, 6, 7, 8]
+
+
+const toHash = str => {
+    let idx = 0;
+
+    for (let char of str) {
+        debugger
+        const charCode = char.charCodeAt();
+        console.log(charCode);
+        idx += charCode % 5
+        console.log(idx)
+    }
+    return idx
+}
+
+arr[toHash("banana")] = "squid"
+
+console.log(arr)
+
+
+
+
+
+
 // function NBAPlayer(name, team, pos){
 //     this.name = name;
 //     this.team = team;
