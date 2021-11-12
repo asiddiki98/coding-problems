@@ -1,26 +1,22 @@
-const arr = [1, 2, 3, 4, 5, 6, 7, 8]
+// const arr = [1, 2, 3, 4, 5, 6, 7, 8]
 
 
-const toHash = str => {
-    let idx = 0;
+// const toHash = str => {
+//     let idx = 0;
 
-    for (let char of str) {
-        debugger
-        const charCode = char.charCodeAt();
-        console.log(charCode);
-        idx += charCode % 5
-        console.log(idx)
-    }
-    return idx
-}
+//     for (let char of str) {
+//         debugger
+//         const charCode = char.charCodeAt();
+//         console.log(charCode);
+//         idx += charCode % 5
+//         console.log(idx)
+//     }
+//     return idx
+// }
 
-arr[toHash("banana")] = "squid"
+// arr[toHash("banana")] = "squid"
 
-console.log(arr)
-
-
-
-
+// console.log(arr)
 
 
 // function NBAPlayer(name, team, pos){
@@ -130,4 +126,28 @@ const x = [
     [7, 8, 9]
 ];
 
-console.log(x.transpose())
+// console.log(x.transpose())
+const NUMS = [1, 2, 3, 4, 5];
+
+Array.prototype.myEach = function(callback){
+    debugger
+    for (let i = 0; i < this.length; i ++){
+        callback(this[i])
+    }
+}
+
+NUMS.myEach((num) => {
+    // console.log(`square of ${num} is ${num * num}`);
+});
+
+Array.prototype.myMap = function(cb){
+ 
+    const mappedArray = []
+
+     this.myEach(element => mappedArray.push(cb(element)))
+
+    return mappedArray
+}
+
+console.log(NUMS.myMap(num => num * num));
+
