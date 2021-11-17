@@ -130,7 +130,7 @@ const x = [
 const NUMS = [1, 2, 3, 4, 5];
 
 Array.prototype.myEach = function(callback){
-    debugger
+    // debugger
     for (let i = 0; i < this.length; i ++){
         callback(this[i])
     }
@@ -149,5 +149,40 @@ Array.prototype.myMap = function(cb){
     return mappedArray
 }
 
-console.log(NUMS.myMap(num => num * num));
+// console.log(NUMS.myMap(num => num * num));
 
+
+function getNumberOfIslands(binaryMatrix) {
+    let numOfIsles = 0;
+    debugger
+    for (let row = 0; row < binaryMatrix.length; row++) {
+        for (let col = 0; col < binaryMatrix[row].length; col++) {
+            if (binaryMatrix[row][col] === 1) {
+                // console.log(binaryMatrix[row][col])
+                if (col !== binaryMatrix[row].length -1  && binaryMatrix[row][col + 1] === 1) numOfIsles++;
+                // console.log(binaryMatrix[row][col + 1])
+                if (col !== 0 && binaryMatrix[row][col - 1] === 1) numOfIsles++;
+                // console.log(binaryMatrix[row][col - 1])
+                if (row !== 0 && binaryMatrix[row - 1][col] === 1) numOfIsles++;
+                // console.log(binaryMatrix[row - 1][col])
+                if (row !== binaryMatrix.length - 1  && binaryMatrix[row + 1][col] === 1) numOfIsles++;
+                binaryMatrix[row][col] = 0;
+            }
+        }
+    }
+    return numOfIsles 
+}
+
+const binaryMatrix = [[0, 1, 0, 1, 0],
+[0, 0, 1, 1, 1],
+[1, 0, 0, 1, 0],
+[0, 1, 1, 0, 0],
+[1, 0, 1, 0, 1]]
+
+[   [1, 0, 1, 0], 
+    [0, 1, 1, 1], 
+    [0, 0, 1, 0], 
+    [1, 1, 0, 0], 
+    [0, 1, 0, 1]]
+
+console.log(getNumberOfIslands(binaryMatrix))
